@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//Mengganti route
+Route::view('/', 'template.index');
+
+Route::view('/login', 'auth.login');
+
+Route::get('/user/{id}', [UserController::class, 'show']);
